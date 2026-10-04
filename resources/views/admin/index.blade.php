@@ -89,7 +89,7 @@
         <h1>管理者ページ</h1>
 
         <p class="welcome">
-            ようこそ、{{ auth()->user()->name }} さん！
+            ようこそ、{{ auth()->user()?->name }} さん！
         </p>
 
         <span class="badge">管理者</span>

@@ -8,8 +8,8 @@
 - Fortify認証（ログイン / 登録 / ログアウト）
 - Userモデル（is_adminカラム付き）
 - テストユーザー（シーダー）
-  - 管理者: admin@example.com / password
-  - 一般: user@example.com / password
+    - 管理者: admin@example.com / password
+    - 一般: user@example.com / password
 - AdminController
 - 管理者ページ（/admin）
 
@@ -65,3 +65,28 @@ cp .env.example .env
 
 - admin@example.com でログイン → /admin アクセス → ✅ 表示される
 - user@example.com でログイン → /admin アクセス → ❌ 403エラー
+
+# middleware-app-practice
+
+## 概要
+
+COACHTECH 教材 Tutorial 10-2「ミドルウェア ハンズオン演習」で作成した成果物です。
+ミドルウェアを使って管理者専用ページを保護した。
+
+## 使用技術
+
+- PHP 8.x
+- Laravel 10.x
+- カスタムミドルウェア
+- Laravel Fortify（認証）
+
+## 学んだこと
+
+-　ミドルウェアが Request と Response の間で処理を介在させる仕組み
+
+- sail artisan make:middleware でのミドルウェア作成と Kernel.php での登録
+- ルートへのミドルウェア適用方法（->middleware('check_admin')）
+
+## 動作確認
+
+管理者ユーザーと一般ユーザーのアドレスとパスワードを入力して、一般の場合はエラーが出るようにした。
